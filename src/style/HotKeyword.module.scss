@@ -1,0 +1,138 @@
+// HotKeyword.module.scss
+@function pxToRem($px) {
+  @return calc(#{$px} / var(--html-font-size) * 1rem);
+}
+
+.hotKeyword {
+  margin-bottom: pxToRem(45);
+}
+
+.header {
+  display: flex;
+  height: pxToRem(45);
+  align-items: center;
+  background-color: black;
+  padding: 0 pxToRem(15.6);
+  color: white;
+}
+
+.title {
+  margin-right: pxToRem(15);
+  font-size: pxToRem(14);
+  color: #999999;
+}
+
+.divider {
+  margin-right: pxToRem(15);
+  font-size: pxToRem(13);
+}
+
+.currentKeyword {
+  display: flex;
+  align-items: center;
+  
+  span {
+    color: white;
+    &.topRank {
+        margin-right: pxToRem(5);
+        color: #eb3916;
+    }
+  }
+}
+
+.dropdownBtn {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+  font-size: pxToRem(13);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: white;
+
+  img {
+    height: pxToRem(6.1);
+    width: pxToRem(11.3);
+    transition: transform 0.3s ease;
+  }
+}
+
+.header {
+    &.open {
+        .title {
+            color: var(--neutral-white);
+        }
+
+        .currentKeyword {
+            opacity: 0;
+        }
+
+        .dropdownBtn {
+            img {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+.currentKeyword {
+  display: flex;
+  align-items: center;
+}
+
+.topRank {
+  margin-right: pxToRem(5);
+  color: #eb3916;
+}
+
+// 💡 드롭다운 컨테이너 (애니메이션 핵심)
+.listContainer {
+  background-color: black;
+  padding: 0 pxToRem(15.6);
+  overflow: hidden;
+  max-height: 0; // 💡 기본은 닫혀있음
+  transition: max-height 0.3s ease-in-out; // 💡 높이 변화 애니메이션
+
+  // 💡 열렸을 때 높이를 222px로 변경
+  &.open {
+    max-height: pxToRem(222);
+  }
+}
+
+.innerWrap {
+  width: 100%;
+  border-top: pxToRem(1) solid #666666;
+}
+
+.listWrap {
+  margin-top: pxToRem(20);
+  display: flex;
+  justify-content: space-between;
+  font-size: pxToRem(13);
+  color: white;
+  padding-bottom: pxToRem(20); // 추가
+}
+
+.listCol {
+  width: 50%;
+}
+
+.listItem {
+  margin-bottom: pxToRem(13);
+
+  a {
+    display: flex;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.rank {
+  margin-right: pxToRem(10);
+  
+  &.top {
+    color: #eb3916;
+  }
+}

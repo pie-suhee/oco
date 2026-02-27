@@ -1,0 +1,214 @@
+// MainSlide.module.scss
+@function pxToRem($px) {
+  @return calc(#{$px} / var(--html-font-size) * 1rem);
+}
+
+:global {
+    .swiper-slide {
+        display: flex !important;
+        width: 90% !important;
+        align-items: flex-start;
+    }
+}
+
+.mainSlide {
+    width: 100%;
+    margin-bottom: pxToRem(35);
+    position: relative;
+
+    .img_box {
+        width: 100%;
+        aspect-ratio: 600 / 696;
+        position: relative;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    :global(.swiper-slide-active) {
+        .text_box {
+        transform: translateX(0);
+        opacity: 1;
+        transition-delay: 0.2s;
+        }
+    }
+
+    .text_box {
+        position: absolute;
+        bottom: pxToRem(20);
+        z-index: 10;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        padding: 0 4%;
+        color: white;
+        font-size: pxToRem(26);
+        transition: all 1.2s cubic-bezier(0.045, 0.82, 0.165, 1);
+        transition-delay: 0.7s;
+        transform: translateX(pxToRem(200));
+        opacity: 0;
+        will-change: transform, opacity;
+
+        .title {
+            font-weight: 300;
+            line-height: 1.2em;
+            filter: drop-shadow(0 0 pxToRem(2) rgba(0, 0, 0, 0.5));
+        }
+
+        .desc {
+            font-weight: 600;
+            line-height: 1.2;
+            text-shadow: pxToRem(1) pxToRem(1) pxToRem(15) rgba(0, 0, 0, 0.251);
+        }
+    }
+
+    .np_box {
+        display: flex;
+        justify-content: space-between;
+        margin: pxToRem(30) pxToRem(16) 0;
+
+        .nav_box {
+            display: flex;
+            gap: pxToRem(5);
+            margin-right: pxToRem(5);
+
+            button {
+                width: pxToRem(34);
+                height: pxToRem(34);
+                background: none;
+                border: none;
+                cursor: pointer;
+
+                img {
+                width: 100%;
+                height: 100%;
+                }
+            }
+        }
+
+        .pag_box {
+            display: flex;
+            align-items: center;
+            gap: pxToRem(13);
+
+            :global(.swiper-pagination-custom) {
+                position: relative !important;
+                inset: auto !important;
+                font-size: pxToRem(12);
+                font-weight: bold;
+                color: #000;
+            }
+        }
+    }
+
+
+    .more_box {
+        display: flex;
+        align-items: center;
+        color: #808080;
+        font-size: pxToRem(12);
+        cursor: pointer;
+
+        .icon_box {
+            width: pxToRem(12);
+            height: pxToRem(12);
+            margin-right: pxToRem(5);
+
+            img {
+            width: 100%;
+            height: 100%;
+            }
+        }
+
+        span {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+    }
+}
+
+.modalContainer {
+    width: 100%;
+    max-width: 600px;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: var(--neutral-white);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.modalHeader {
+    position: relative;
+    height: pxToRem(57);
+    width: 100%;
+    border-bottom: pxToRem(1) solid #000000;
+}
+
+.modalHeaderInner {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalTitle {
+    font-size: pxToRem(18);
+    font-weight: normal;
+    line-height: pxToRem(57);
+    color: #0d0d0d;
+}
+
+.closeBtn {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    width: pxToRem(16);
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.modalContent {
+    height: calc(100% - #{pxToRem(57)});
+    overflow-y: auto;
+    padding-bottom: pxToRem(20);
+}
+
+.bannerList {
+    display: flex;
+    flex-direction: column;
+    gap: pxToRem(10);
+    padding: pxToRem(16);
+}
+
+.modalBannerItem {
+    position: relative;
+    display: flex;
+    aspect-ratio: 600 / 696;
+    align-items: center;
+}
+
+.modalImgBox {
+    width: 100%;
+    aspect-ratio: 600 / 696;
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

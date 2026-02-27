@@ -1,0 +1,41 @@
+@import url(./reset.css);
+@import url(./_system.css);
+
+:root {
+    --html-font-size: 16;
+}
+
+/* 스크롤 설정 S: */
+::-webkit-scrollbar {
+    width: 0.3em;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(196, 196, 196, 0.3);
+    border-radius: 0.15em;
+}
+/* 스크롤 설정 E: */
+
+/* rem 설정 S: */
+html {
+    font-size: calc(var(--html-font-size) * 1px);
+}
+/* rem 설정 E: */
+
+/* body S: */
+body {
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--neutral-white);
+    color: var(--neutral-black-800);
+    font-family: Lato, Poppins, Noto Sans KR, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    touch-action: pan-y;
+    white-space: pre-line;
+}
+/* body E: */

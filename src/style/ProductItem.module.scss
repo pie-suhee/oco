@@ -1,0 +1,71 @@
+// ProductItem.module.scss
+@function pxToRem($px) {
+  @return calc(#{$px} / var(--html-font-size) * 1rem);
+}
+
+.productItem {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  width: 100%;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; // aspect-[1/1]
+  margin-bottom: pxToRem(10); // mb-10
+  overflow: hidden;
+  background-color: #f8f8f8; // 기본 배경색 (blank-color 대용)
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; // object-contain
+  }
+}
+
+.infoWrap {
+  display: flex;
+  flex-direction: column;
+  color: #262626;
+
+  .brand {
+    font-size: pxToRem(13); // text-13
+    font-weight: 700; // font-bold
+    margin: 0;
+  }
+
+  .name {
+    font-size: pxToRem(12); // text-12
+    font-weight: 500; // font-medium
+    color: #808080;
+    margin: pxToRem(6) 0 pxToRem(14) 0; // mt-6 mb-14
+    
+    // 3줄 말줄임 처리 (line-clamp-3)
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.4;
+  }
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: pxToRem(18); // h-18
+
+  .price {
+    font-size: pxToRem(14); // text-14
+    font-weight: 600; // font-semibold
+    color: #1a1a1a;
+  }
+
+  .discount {
+    font-size: pxToRem(12); // text-12
+    font-weight: 700; // font-bold
+    color: #d92525; // #d92525
+  }
+}

@@ -92,14 +92,19 @@ textarea {
   margin: 0;
   padding: 0;
   border: 0;
-  box-sizing: border-box; /* 해당부분 추가 : 수희 */
+  box-sizing: border-box;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  text-decoration: none; /* 해당부분 추가 : 수희 */
+  text-decoration: none;
 }
 
 /* HTML5 display-role reset for older browsers */
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
 article,
 aside,
 details,

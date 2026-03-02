@@ -1,0 +1,136 @@
+// PromotionBanner.module.scss
+@function pxToRem($px) {
+  @return calc(#{$px} / var(--html-font-size) * 1rem);
+}
+
+.promotionBannerList {
+  width: 100%;
+
+  .imageWrap {
+    position: relative;
+    width: 100%;
+    padding-bottom: 54.6%; 
+    background-color: #f4f4f4;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .content {
+    margin-top: pxToRem(20);
+    height: pxToRem(72);
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    color: #000000;
+
+    .brand {
+      font-size: pxToRem(20);
+      font-weight: 300;
+    }
+
+    .title {
+      font-size: pxToRem(20);
+      font-weight: 500; 
+      white-space: pre-wrap;
+      margin-top: pxToRem(2);
+    }
+  }
+}
+
+.productGrid {
+  display: grid;
+  width: 100%;
+  margin-top: pxToRem(20);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: pxToRem(16);
+  row-gap: pxToRem(32);
+}
+
+.controllerWrap {
+  margin-top: pxToRem(45);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4%;
+}
+
+.paginationArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  :global(.swiper-pagination-custom) {
+    position: relative !important;
+    bottom: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    display: flex;
+    height: pxToRem(13);
+    align-items: center;
+    justify-content: center;
+    white-space: pre;
+    font-size: pxToRem(12);
+    font-weight: bold;
+    line-height: 2.33;
+    letter-spacing: -0.3px;
+  }
+
+  :global(.swiper-pagination-bullet) {
+    width: pxToRem(4);
+    height: pxToRem(13);
+    background-color: #b3b3b3;
+    margin: 0 pxToRem(4);
+    opacity: 0.2;
+    border-radius: 0;
+    transition: opacity 0.3s;
+    display: inline-block;
+    animation: none;
+
+    &:global(.swiper-pagination-bullet-active) {
+      opacity: 1 !important;
+      animation: aniRotateDrop 0.8s cubic-bezier(0.76,0.05,0.86,0.06) 1 forwards;
+    }
+  }
+}
+
+.navButtonArea {
+  display: flex;
+
+  button {
+    width: pxToRem(34);
+    height: pxToRem(34);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    
+    &:first-child {
+      margin-right: pxToRem(5);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+/* 애니메이션 s: */
+@keyframes aniRotateDrop {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}
+/* 애니메이션 e: */

@@ -1,0 +1,142 @@
+// HotKeyword.module.scss
+@function pxToRem($px) {
+  @return calc(#{$px} / var(--html-font-size) * 1rem);
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  border-top: pxToRem(1) solid #e5e7eb; // border-gray-200
+}
+
+// 상단 부분 (메뉴, SNS)
+.footerTop {
+  padding: pxToRem(16.6) 0;
+}
+
+.footerInfo {
+  margin-bottom: pxToRem(18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: pxToRem(12);
+  line-height: 1em;
+  color: #999999;
+
+  li {
+    margin: 0 pxToRem(10);
+    
+    button {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      color: inherit;
+      font-size: inherit;
+    }
+  }
+}
+
+.footerSns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  li {
+    margin: 0 pxToRem(10);
+    
+    a {
+      display: inline-block;
+      aspect-ratio: 30 / 30;
+      
+      img {
+        height: pxToRem(30);
+        width: pxToRem(30);
+      }
+    }
+  }
+}
+
+// 하단 부분 (정보, 저작권)
+.footerBottom {
+  display: flex;
+  flex-direction: column;
+  padding: pxToRem(15) 5% pxToRem(55) 5%;
+  background-color: #f7f7f7;
+  font-size: pxToRem(12);
+  color: #999999;
+  line-height: 1.5em;
+}
+
+.footerBottom1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: pxToRem(10); // 간격 추가
+}
+
+.companyInfo {
+  // Tailwind의 p 태그 스타일 대응
+  p {
+    margin: 0;
+  }
+}
+
+.bizInfoCheck {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+  button {
+    border: pxToRem(1) solid #d1d5db; // border-gray-300
+    padding: 0 pxToRem(8);
+    height: pxToRem(20);
+    line-height: pxToRem(18);
+    background-color: white;
+    color: #666666;
+    margin-left: pxToRem(5);
+    cursor: pointer;
+  }
+}
+
+.escrowIcon {
+  aspect-ratio: 35 / 41;
+  width: pxToRem(35);
+  height: pxToRem(41);
+  position: relative;
+  bottom: pxToRem(7);
+  
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.footerBottom2 {
+  // 중간 텍스트들
+  p {
+    margin: 0 0 pxToRem(5) 0;
+  }
+}
+
+.emailWrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: pxToRem(10);
+  
+  p {
+    margin-right: pxToRem(4);
+  }
+  
+  a {
+    color: #999999;
+    text-decoration: none;
+  }
+}
+
+.footerBottom3 {
+  .copyright {
+    margin-top: pxToRem(10);
+  }
+}

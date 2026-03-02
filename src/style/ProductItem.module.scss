@@ -13,15 +13,15 @@
 .imageWrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1; // aspect-[1/1]
-  margin-bottom: pxToRem(10); // mb-10
+  aspect-ratio: 1 / 1;
+  margin-bottom: pxToRem(10);
   overflow: hidden;
-  background-color: #f8f8f8; // 기본 배경색 (blank-color 대용)
+  background-color: #f8f8f8;
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: contain; // object-contain
+    object-fit: contain;
   }
 }
 
@@ -31,23 +31,22 @@
   color: #262626;
 
   .brand {
-    font-size: pxToRem(13); // text-13
-    font-weight: 700; // font-bold
+    font-size: pxToRem(13);
+    font-weight: 700;
     margin: 0;
   }
 
   .name {
-    font-size: pxToRem(12); // text-12
-    font-weight: 500; // font-medium
+    height: calc(pxToRem(12) * 1.4 * 3);
+    margin: pxToRem(6) 0 pxToRem(14) 0;
+    font-size: pxToRem(12);
+    font-weight: 500;
     color: #808080;
-    margin: pxToRem(6) 0 pxToRem(14) 0; // mt-6 mb-14
-    
-    // 3줄 말줄임 처리 (line-clamp-3)
+    line-height: 1.4;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    line-height: 1.4;
   }
 }
 

@@ -1,0 +1,38 @@
+// TechLife.module.scss
+@function pxToRem($px) {
+  @return calc(#{$px} / var(--html-font-size) * 1rem);
+}
+
+.techLife {
+  margin-top: pxToRem(50);
+  margin-bottom: pxToRem(50);
+  padding-top: pxToRem(10);
+  padding-bottom: pxToRem(10);
+
+  .title {
+    margin-bottom: pxToRem(20);
+    padding-left: 4%;
+    padding-right: 4%;
+    font-size: pxToRem(21);
+    font-weight: 600;
+    line-height: 1;
+    color: #1a1a1a;
+  }
+
+  .swiperContainer {
+    width: 100%;
+    padding-left: 4%;
+    padding-right: 4%;
+    
+    .swiperSlide {
+      width: auto;
+      margin-right: pxToRem(10);
+
+      .slideList {
+        border: pxToRem(0.5) solid #e6e6e6;
+        padding: pxToRem(10) pxToRem(8);
+      }
+    }
+  }
+}
+

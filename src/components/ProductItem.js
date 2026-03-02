@@ -5,7 +5,7 @@ const ProductItem = ({
     name = "폴로 랄프로렌 남성 피마코튼 긴팔 무지니트", 
     price = "109,000", 
     discount = "61%", 
-    imgSrc = "https://www.ocokorea.com/upload/images/product/6439/6439394/Product_1758776099917_cache_300_300.jpg" 
+    imgSrc
 }) => {
     return (
         <a href="#!" className={styles.productItem}>

@@ -8,7 +8,7 @@ import styles from "../style/SlideItems.module.scss"
 
 const SlideItems = ({ categoryTitle, products = [] }) => {
     const scrollbarRef = useRef(null);
-    const [_, setInit] = useState(false);
+    const setInit = useState(false)[1];
 
     useEffect(() => {
         setInit(true);

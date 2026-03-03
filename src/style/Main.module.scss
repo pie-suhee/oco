@@ -1,0 +1,16 @@
+// Main.module.scss
+@function pxToRem($px) {
+  @return calc(#{$px} / var(--html-font-size) * 1rem);
+}
+
+.recommendation {
+  margin-top: pxToRem(50);
+  
+  .sectionTitle {
+    font-size: pxToRem(21);
+    font-weight: 600;
+    line-height: 1;
+    color: #1a1a1a;
+    margin-bottom: pxToRem(20);
+  }
+}

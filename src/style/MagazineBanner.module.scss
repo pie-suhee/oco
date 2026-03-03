@@ -3,7 +3,7 @@
   @return calc(#{$px} / var(--html-font-size) * 1rem);
 }
 
-.MagazineBanner {
+.magazineBanner {
   position: relative;
   margin-top: pxToRem(50);
   box-sizing: border-box;

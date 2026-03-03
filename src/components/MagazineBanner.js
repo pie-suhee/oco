@@ -16,7 +16,7 @@ const MagazineBanner = () => {
     ]
 
     return (
-        <section className={styles.MagazineBanner}>
+        <section className={styles.magazineBanner}>
             <div className={styles.title}>OCO Magazine</div>
             <div className={styles.description}>
                 OCO 입점 브랜드들의 특별한 이벤트와 <br /> 이야기를 만나보세요.

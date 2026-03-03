@@ -1,0 +1,61 @@
+// SlideItems.module.scss
+@function pxToRem($px) {
+  @return calc(#{$px} / var(--html-font-size) * 1rem);
+}
+
+.slideItems {
+  margin-bottom: pxToRem(50);
+
+  .sectionTitle {
+    font-size: pxToRem(21);
+    font-weight: 600;
+    line-height: 1;
+    color: #1a1a1a;
+    margin-bottom: pxToRem(20);
+  }
+
+  .categoryTitle {
+    font-size: pxToRem(14);
+    font-weight: 600;
+    line-height: 1;
+    color: #0d0d0d;
+    margin-bottom: pxToRem(20);
+  }
+
+  .swiperContainer {
+    width: 100%;
+    
+    // Swiper Grid 사용 시 슬라이드 간격 조절
+    :global(.swiper-slide) {
+      height: calc(50% - #{pxToRem(6.5)}); // 2행 구성을 위한 계산
+      margin-bottom: pxToRem(20);
+    }
+  }
+
+  .scrollbarWrapper {
+    margin-top: pxToRem(20);
+    position: relative;
+    width: 100%;
+    height: pxToRem(3);
+
+    // Swiper가 생성하는 scrollbar 클래스를 직접 제어
+    :global {
+      .swiper-scrollbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        background-color: #eee;
+        border-radius: 0 !important;
+
+        .swiper-scrollbar-drag {
+          height: pxToRem(3);
+          background-color: #000 !important;
+          border-radius: 0 !important;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
